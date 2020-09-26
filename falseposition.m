@@ -1,11 +1,13 @@
-function ret = bisection(f, a, b, iterations)
+function ret = falseposition(f, a, b, iterations)
   for i=1:iterations
-    % calculating the bisection
-    x_i = (a+b)/2;
-    
-    % applying f to all the inputs
+    % applying f to a and b
     f_a = f(a);
     f_b = f(b);
+    
+    % calculating the false position
+    x_i = ((a*f_b)-(b*f_a))/(f_b-f_a);
+    
+    % applying f to x_i
     f_xi = f(x_i);
     
     % calculating error
