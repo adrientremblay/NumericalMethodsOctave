@@ -9,10 +9,10 @@ function ret = bisection(f, a, b, iterations)
     f_xi = f(x_i);
     
     % calculating error
-    error = abs((b-a)/2);
+    abs_error = abs((b-a)/2);
     
     % printing result of this iteration
-    printf("x_i is %d after %d iterations.\nabsolute error is %d.\n", x_i, i, error);
+    printf("x_i is %d after %d iterations.\nabsolute error is %d.\n", x_i, i, abs_error);
     
     % deciding new bounds for sub-interval
     if (f_a*f_xi < 0)
