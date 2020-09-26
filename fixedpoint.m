@@ -9,7 +9,6 @@ function ret = fixedpoint(g, x_i, iterations)
     rel_error = abs((g_xi-x_i)/g_xi);
     
     % setting x_i to this value
-    prev = x_i;
     x_i = g_xi;
     
     % printing result of this iteration
