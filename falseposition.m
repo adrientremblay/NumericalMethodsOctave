@@ -24,4 +24,7 @@ function ret = falseposition(f, a, b, iterations)
     endif
    
   endfor 
+  
+  ret = x_i;
+  
 endfunction

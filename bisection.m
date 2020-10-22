@@ -22,4 +22,7 @@ function ret = bisection(f, a, b, iterations)
     endif
    
   endfor 
+  
+  ret = x_i;
+  
 endfunction

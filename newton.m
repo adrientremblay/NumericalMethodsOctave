@@ -21,4 +21,6 @@ function ret = newton(f, x_i, iterations)
     printf("x_i is %d after %d iterations.\nrelative error is %d.\n", x_i, i, rel_error);
   endfor
   
+  ret = x_i;
+  
 endfunction
