@@ -1,4 +1,5 @@
-% g is an an anonymous function representing g(x) the function you are trying to estimate
+% g is an an anonymous function representing g(x) the TRANSFORMED form of function f
+% that you are trying to estimate
 % IMPORTANT: this assumes g is of the form g(x) = x
 % x_i is the initial guess of the algo, use 0 if not given
 % iterations is the # of iterations to perform

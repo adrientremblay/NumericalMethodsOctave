@@ -1,4 +1,13 @@
-function ret = newton(f, x_i, iterations)
+% USAGE INSTRUCTIONS:
+% Type the following in console:
+%   setenv PYTHON python2
+%   sympref reset
+% Use the script
+
+% f is an an anonymous function representing f(x) the function you are trying to estimate
+% x_i is the initial guess of the algo, use 0 if not given
+% iterations is the # of iterations to perform
+function ret = newton_method(f, x_i, iterations)
   % loading symbolic package
   pkg load symbolic
   syms x;
@@ -14,11 +23,14 @@ function ret = newton(f, x_i, iterations)
     % calculating relative error
     rel_error = abs((x_iplus1-x_i)/x_iplus1);
     
+    % calculating abs error
+    abs_error = abs(x_iplus1-x_i);
+    
     % setting x_i to this value
     x_i = x_iplus1;
     
     % printing result of this iteration
-    printf("x_i is %d after %d iterations.\nrelative error is %d.\n", x_i, i, rel_error);
+     printf("\nx_i is %d after %d iterations.\nabsolute error is %d.\nrelative error is %d.\n\n", x_i, i, abs_error, rel_error);
   endfor
   
   ret = x_i;
