@@ -1,4 +1,5 @@
 % f is an an anonymous function representing f(x) the function you are trying to estimate
+% ASSUMING f is of the form f(x) = 0
 % a is the lower bound of the initial bisection guess
 % b is the upper bound of the initial bisection guess
 % iterations is the # of iterations to perform
