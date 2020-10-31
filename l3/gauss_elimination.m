@@ -9,6 +9,8 @@ function X = gauss_elimination(A, B)
     A(i+1:n,:) = A(i+1:n,:) - c*A(i,:);
     B(i+1:n,:) = B(i+1:n,:) - c*B(i,:);
   endfor
+
+  A
   
   % creating the answer matrix
   X = zeros(n, 1);
