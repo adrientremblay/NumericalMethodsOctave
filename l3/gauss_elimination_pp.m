@@ -1,5 +1,5 @@
 function X = gauss_elimination_pp(A, B)
-  TOLERANCE = 0.01;
+  TOLERANCE = 0.1;
 
   % getting size of A matrix
   [n, ~] = size(A);
@@ -7,7 +7,7 @@ function X = gauss_elimination_pp(A, B)
   % convert matrix to triangular form
   for i=1 : n-1
     % check if we should swap rows for A and B
-    if (abs(A(i, i) < TOLERANCE)) % will fucking break if this is the nth row
+    if (abs(A(i, i) <= TOLERANCE)) % will fucking break if this is the nth row
       printf("swapping %d and %d!\n", i, (i+1));
       A([i (i+1)],:) = A([(i+1) i],:);
       B([i (i+1)],:) = B([(i+1) i],:);
