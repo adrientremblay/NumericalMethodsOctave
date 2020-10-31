@@ -1,7 +1,11 @@
-x = [1 ; 2 ; 4];
-y = [-7.8 ; -24.4 ; -96.6]
+% x = [1 ; 2 ; 4];
+% y = [-7.8 ; -24.4 ; -96.6]
 
-A = [x.^0 x.^1 x.^2]
+% ONLY WORKS FOR 3x3 matrix!!!
+function ret = van_der_monde(x, y)
+    A = [x.^0 x.^1 x.^2]
 
-% idk why this works
-a = A\y
+    a = A\y
+
+    ret = a;
+endfunction
