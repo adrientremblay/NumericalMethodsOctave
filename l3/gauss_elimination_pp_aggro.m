@@ -1,17 +1,19 @@
-function X = gauss_elimination_pp(A, B)
-  TOLERANCE = 0.1;
-
+function X = gauss_elimination_pp_aggro(A, B)
   % getting size of A matrix
   [n, ~] = size(A);
   
   % convert matrix to triangular form
   for i=1 : n-1
-    % check if we should swap rows for A and B
-    if (abs(A(i, i) <= TOLERANCE)) % will fucking break if this is the nth row
-      printf("swapping %d and %d!\n", i, (i+1));
-      A([i (i+1)],:) = A([(i+1) i],:);
-      B([i (i+1)],:) = B([(i+1) i],:);
-    endif
+    % Swapping with the max value row 
+    maxI = i
+    for probe=i+1:n
+      if (abs(A(probe, i)) > abs(A(maxI, i)))
+        maxI = probe
+      endif
+    endfor
+    printf("swapping %d and %d!\n", i, maxI);
+    A([i maxI],:) = A([maxI i],:);
+    B([i maxI],:) = B([maxI i],:);
     % calculating the pivot coefficiant
     c = A(i+1:n, i)/A(i, i);
     A(i+1:n,:) = A(i+1:n,:) - c*A(i,:);

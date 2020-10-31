@@ -10,7 +10,8 @@ function X = gauss_elimination(A, B)
     B(i+1:n,:) = B(i+1:n,:) - c*B(i,:);
   endfor
 
-  A
+  %display U (which is the transformed A)
+  U = A 
   
   % creating the answer matrix
   X = zeros(n, 1);
