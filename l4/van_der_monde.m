@@ -3,7 +3,13 @@
 
 % ONLY WORKS FOR 3x3 matrix!!!
 function ret = van_der_monde(x, y)
-    A = [x.^0 x.^1 x.^2]
+    powers = zeros(0)
+    for i=1:size(x)
+       powers(i) = i; 
+    endfor
+    powers
+
+    A = [x.^powers]
 
     a = A\y
 
